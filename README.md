@@ -41,6 +41,9 @@ This repository provides a robust Laravel 11 boilerplate that standardizes proje
 - **Service-Repository Pattern:**
   - Clean separation of business logic (services) and data access (repositories)
 
+- **Telescope for development environment:**
+  - Telescope is already present for the developement environment so that you can check everything with the help of UI 
+
 ## Requirements
 
 - **PHP:** >= 8.0

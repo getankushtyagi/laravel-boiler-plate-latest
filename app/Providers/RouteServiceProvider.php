@@ -38,8 +38,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix('api/v1') // ✅ Automatically add the prefix
+        Route::prefix('api')
             ->middleware('api')
             ->group(base_path('routes/api.php'));
+        Route::prefix('api/v1') // ✅ Automatically add the prefix
+            ->middleware('api')
+            ->group(base_path('routes/api/v1/api.php'));
     }
 }

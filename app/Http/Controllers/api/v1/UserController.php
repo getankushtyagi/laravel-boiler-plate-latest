@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Events\UserRegistered;
 use App\Http\Controllers\Controller;
 use App\Services\UserService;
 use App\Transformers\UserTransformer;
@@ -36,6 +37,9 @@ class UserController extends Controller
             ['user' => $user, 'inputs' => $inputs]
         );
 
+        if(!is_null($userdata)) {
+            UserRegistered::dispatch($userdata);
+        }
         if (Arr::get($inputs, 'all')) {
             return response()->success($this->getTransformedData($userdata, new UserTransformer));
         }

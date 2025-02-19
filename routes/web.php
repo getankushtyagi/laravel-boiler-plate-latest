@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
+// social media login routes
 Route::middleware(['web'])->group(function () {
     Route::get('auth/{provider}', [SocialAuthController::class, 'redirectToProvider'])
         ->name('social.redirect');

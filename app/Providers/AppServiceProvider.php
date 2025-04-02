@@ -84,7 +84,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Response::macro('noContent', function () {
-            Response::json(['status' => 204], 204);
+            return Response::json(['status' => 204], 204);
         });
     }
 }
